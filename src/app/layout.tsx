@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
+import { aeonik } from "./fonts";
 import "./globals.css";
+import TopBar from "@/layouts/TopBar";
+import Link from "next/link";
+import Image from "next/image";
+import Facebook from "@/icons/Facebook";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
   subsets: ["latin"],
 });
 
@@ -24,8 +25,58 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${roboto.variable} ${aeonik.variable}`}>
+        <TopBar />
         {children}
+        <footer>
+          <div>
+            <div>
+              <Image
+                src="/logo_white.png"
+                width={100}
+                height={100}
+                alt="909 Equity Capital"
+              />
+              <div>
+                <h4>Contact us</h4>
+                <small>
+                  <Link href="mailto:info@909equitycapital.com">
+                    info@909equitycapital.com
+                  </Link>
+                </small>
+                <small>
+                  <Link href="tel:+2349092686858">+234 9092686858</Link>
+                </small>
+              </div>
+              <div>
+                <h4>Location</h4>
+                <address>
+                  21 Aso Rock street, Block 29 Atlanta, Abuja, Republic of Congo
+                </address>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h4>Stay Connected</h4>
+                <div>
+                  <Link href="/">
+                    <Facebook />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <small>
+              &copy; {new Date().getFullYear()} 909EquityCapital. All Rights
+              Reserved
+            </small>
+            <div>
+              <Link href="/">Policy and Terms</Link>
+              <Link href="/">Website by Egwinity</Link>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );

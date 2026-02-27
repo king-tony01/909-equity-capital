@@ -1,0 +1,73 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.input label {
+  color: rgba(21, 20, 20, 0.5019607843);
+}
+.input .multiple {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: #cfedda;
+  border-bottom: 0.15rem solid #71bb90;
+}
+.input .multiple span {
+  display: block;
+  color: #153635;
+  margin-left: 0.5rem;
+}
+.input .multiple .countryCode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #153635;
+  margin-left: 0.5rem;
+  position: relative;
+  cursor: pointer;
+}
+.input .multiple .countryCode div {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 6rem;
+}
+.input .multiple .countryCode div span {
+  display: block;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.input .multiple .countryCode div span:hover {
+  background: #f0f0f0;
+}
+.input .multiple input {
+  background: unset;
+  border: unset;
+  width: 100%;
+  display: block;
+  padding: 1rem 0;
+}
+.input.phone {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.input input {
+  background: #cfedda;
+  border-bottom: 0.15rem solid #71bb90;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  padding: 1rem;
+}
+.input input::-moz-placeholder {
+  color: #71bb90;
+}
+.input input::placeholder {
+  color: #71bb90;
+}/*# sourceMappingURL=Component.module.css.map */

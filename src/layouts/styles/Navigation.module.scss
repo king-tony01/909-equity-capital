@@ -1,0 +1,51 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #153635;
+  padding: 1rem;
+  z-index: 100;
+
+  img {
+    width: 10rem;
+    height: 3rem;
+    display: block;
+  }
+
+  ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    li {
+      list-style: none;
+      padding: 0.3rem 0;
+      border-bottom: 0.15rem solid transparent;
+
+      a {
+        color: #ffffff;
+        text-transform: uppercase;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      &.active {
+        border-bottom-color: #71bb90;
+      }
+    }
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border: 0.12rem solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
