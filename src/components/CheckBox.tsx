@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./styles/Component.module.css";
 
 function CheckBox({
   checked = false,
@@ -10,7 +11,7 @@ function CheckBox({
   label?: string;
 }>) {
   return (
-    <div className="checkbox">
+    <div className={styles.checkbox}>
       <input type="checkbox" checked={checked} onChange={onChange} id={label} />
       <label htmlFor={label}>{label}</label>
     </div>

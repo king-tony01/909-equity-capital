@@ -10,9 +10,10 @@
   z-index: 100;
 
   img {
-    width: 10rem;
+    width: 11rem;
     height: 3rem;
     display: block;
+    object-fit: cover;
   }
 
   ul {

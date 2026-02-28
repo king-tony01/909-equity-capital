@@ -6,6 +6,7 @@ import TopBar from "@/layouts/TopBar";
 import Link from "next/link";
 import Image from "next/image";
 import Facebook from "@/icons/Facebook";
+import styles from "./Page.module.css";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -28,9 +29,9 @@ export default function RootLayout({
       <body className={`${roboto.variable} ${aeonik.variable}`}>
         <TopBar />
         {children}
-        <footer>
-          <div>
-            <div>
+        <footer className={styles.footer}>
+          <div className={styles.footer_top}>
+            <div className={styles.footer_top_left}>
               <Image
                 src="/logo_white.png"
                 width={100}
@@ -55,10 +56,34 @@ export default function RootLayout({
                 </address>
               </div>
             </div>
-            <div>
-              <div>
+            <div className={styles.footer_top_right}>
+              <div className={styles.quick_links}>
+                <Link href="/">Quick Link</Link>
+                <Link href="/">Quick Link</Link>
+                <Link href="/">Quick Link</Link>
+                <Link href="/">Quick Link</Link>
+                <Link href="/">Quick Link</Link>
+                <Link href="/">Quick Link</Link>
+                <Link href="/">Quick Link</Link>
+                <Link href="/">Quick Link</Link>
+                <Link href="/">Quick Link</Link>
+                <Link href="/">Quick Link</Link>
+              </div>
+              <div className={styles.contact}>
                 <h4>Stay Connected</h4>
                 <div>
+                  <Link href="/">
+                    <Facebook />
+                  </Link>
+                  <Link href="/">
+                    <Facebook />
+                  </Link>
+                  <Link href="/">
+                    <Facebook />
+                  </Link>
+                  <Link href="/">
+                    <Facebook />
+                  </Link>
                   <Link href="/">
                     <Facebook />
                   </Link>
@@ -66,7 +91,7 @@ export default function RootLayout({
               </div>
             </div>
           </div>
-          <div>
+          <div className={styles.footer_bottom}>
             <small>
               &copy; {new Date().getFullYear()} 909EquityCapital. All Rights
               Reserved

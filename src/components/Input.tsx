@@ -10,6 +10,8 @@ function Input({
   onChange,
   defaultValue,
   options,
+  name,
+  value,
 }: Readonly<{
   label: string;
   placeholder: string;
@@ -17,6 +19,8 @@ function Input({
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   defaultValue?: string;
   options?: Array<{ value: string; label: string }>;
+  name?: string;
+  value?: string;
 }>) {
   const [isOpen, setIsOpen] = useState(false);
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
@@ -41,7 +45,7 @@ function Input({
     // Trigger onChange if provided, simulating a change event
     if (onChange) {
       const syntheticEvent = {
-        target: { value },
+        target: { value, name },
       } as React.ChangeEvent<HTMLInputElement>;
       onChange(syntheticEvent);
     }
@@ -55,7 +59,7 @@ function Input({
         className={`${styles.multiple} ${styles.selectInput}`}
       >
         <span>
-          {selectedOption?.label ?? defaultValue ?? "Select an option"}
+          {selectedOption?.label ?? defaultValue ?? value ?? "Select an option"}
         </span>
         <ChevronDown />
         {isOpen && (
@@ -103,6 +107,8 @@ function Input({
           id={label}
           onChange={onChange}
           defaultValue={defaultValue}
+          value={value}
+          name={name}
         />
       </div>
     </div>
@@ -115,6 +121,8 @@ function Input({
         id={label}
         onChange={onChange}
         defaultValue={defaultValue}
+        value={value}
+        name={name}
       />
     </div>
   );

@@ -10,9 +10,11 @@
   z-index: 100;
 }
 .navigation img {
-  width: 10rem;
+  width: 11rem;
   height: 3rem;
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .navigation ul {
   position: relative;

@@ -460,4 +460,109 @@
 }
 .home .form form .wrapper button:hover {
   filter: brightness(0.6);
+}
+.home .form form .wrapper button:disabled {
+  background: rgba(21, 54, 53, 0.5019607843);
+  cursor: not-allowed;
+  filter: none;
+}
+
+.footer {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(21, 54, 53, 0.8705882353) 0%, rgba(21, 54, 53, 0.8705882353) 100%), url(/log_big.png) top center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  flex-direction: column;
+  gap: 2rem;
+  color: #c9d5c7;
+}
+.footer a {
+  color: #c9d5c7;
+  text-decoration: none;
+  display: block;
+}
+.footer .footer_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.footer .footer_top_left {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-direction: column;
+}
+.footer .footer_top_left h4 {
+  margin-bottom: 1rem;
+}
+.footer .footer_top_left img {
+  width: 11rem;
+  height: 3rem;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.footer .footer_top_left address {
+  font-style: normal;
+  line-height: 1.6;
+}
+.footer .footer_top_right {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer .footer_top_right h4 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.footer .footer_top .socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer .footer_top .socials a {
+  display: block;
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+.footer .footer_top .socials a:hover {
+  color: #71bb90;
+}
+.footer .footer_top .quick_links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.footer .footer_top .contact {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.footer .footer_top .contact div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer .footer_bottom {
+  width: 100%;
+  border-top: 0.1rem solid #c9d5c7;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+.footer .footer_bottom div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
 }/*# sourceMappingURL=Page.module.css.map */
