@@ -7,12 +7,39 @@
   color: rgba(21, 20, 20, 0.5019607843);
 }
 .input .multiple {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
   background: #cfedda;
   border-bottom: 0.15rem solid #71bb90;
+}
+.input .multiple.selectInput {
+  padding: 1rem;
+}
+.input .multiple.selectInput .options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 100%;
+}
+.input .multiple.selectInput .options span {
+  display: block;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+.input .multiple.selectInput .options span:hover {
+  background: #f0f0f0;
 }
 .input .multiple span {
   display: block;

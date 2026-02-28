@@ -22,7 +22,10 @@ function Input({
   const [isPhoneOpen, setIsPhoneOpen] = useState(false);
   const toggleOptions = () => setIsOpen((prev) => !prev);
   const togglePhoneOptions = () => setIsPhoneOpen((prev) => !prev);
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [selectedOption, setSelectedOption] = useState<{
+    value: string;
+    label: string;
+  } | null>(null);
   const [selectedCountryCode, setSelectedCountryCode] = useState<string>("+1");
 
   const countryCodes = ["+1", "+234", "+44"];
@@ -33,20 +36,32 @@ function Input({
   };
 
   const handleSelectOption = (value: string, label: string) => {
-    setSelectedOption(value);
+    setSelectedOption({ value, label });
     setIsOpen(false);
+    // Trigger onChange if provided, simulating a change event
+    if (onChange) {
+      const syntheticEvent = {
+        target: { value },
+      } as React.ChangeEvent<HTMLInputElement>;
+      onChange(syntheticEvent);
+    }
   };
 
   return type === "select" ? (
     <div className={`${styles.input} ${styles.select} `}>
       <label htmlFor={label}>{label}</label>
-      <div onClick={toggleOptions} className={styles.multiple}>
-        <span>{defaultValue ?? selectedOption ?? "Select an option"}</span>
+      <div
+        onClick={toggleOptions}
+        className={`${styles.multiple} ${styles.selectInput}`}
+      >
+        <span>
+          {selectedOption?.label ?? defaultValue ?? "Select an option"}
+        </span>
         <ChevronDown />
         {isOpen && (
-          <div>
+          <div className={styles.options}>
             {options?.map((option) => (
-              <span 
+              <span
                 key={option.value}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -64,15 +79,12 @@ function Input({
     <div className={`${styles.input} ${styles.phone}`}>
       <label htmlFor={label}>{label}</label>
       <div className={styles.multiple}>
-        <span 
-          className={styles.countryCode}
-          onClick={togglePhoneOptions}
-        >
+        <span className={styles.countryCode} onClick={togglePhoneOptions}>
           {selectedCountryCode}
           {isPhoneOpen && (
             <div>
               {countryCodes.map((code) => (
-                <span 
+                <span
                   key={code}
                   onClick={(e) => {
                     e.stopPropagation();

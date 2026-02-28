@@ -253,9 +253,9 @@ export default function Home() {
                 placeholder="Select your Country"
                 type="select"
                 options={[
-                  { value: "option1", label: "Option 1" },
-                  { value: "option2", label: "Option 2" },
-                  { value: "option3", label: "Option 3" },
+                  { value: "nigeria", label: "Nigeria" },
+                  { value: "ghana", label: "Ghana" },
+                  { value: "cameroon", label: "Cameroon" },
                 ]}
                 defaultValue="Nigeria"
               />
