@@ -5,9 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./styles/Navigation.module.css";
 import { usePathname } from "next/navigation";
+import { useEffect, useState, useRef } from "react";
+import Menu from "@/icons/Menu";
 
 function TopBar() {
   const pathname = usePathname();
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const links = [
     {
       label: "Home",
@@ -30,8 +35,30 @@ function TopBar() {
       path: APP_ROUTES.CONTACT,
     },
   ];
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [isMenuOpen]);
+
   return (
-    <nav className={styles.navigation}>
+    <nav className={styles.navigation} ref={menuRef}>
       <Link href="/">
         <Image
           width={100}
@@ -41,17 +68,32 @@ function TopBar() {
           quality={100}
         />
       </Link>
-      <ul>
+      <ul className={isMenuOpen ? styles.open : ""}>
         {links.map((link, i) => (
           <li key={i} className={pathname === link.path ? styles.active : ""}>
             <Link href={link.path}>{link.label}</Link>
           </li>
         ))}
       </ul>
-      <Link href={APP_ROUTES.BOOKING} className={styles.btn}>
-        <span>Book a Call</span>
-        <ArrowUp />
-      </Link>
+      {windowWidth > 500 ? (
+        <Link href={APP_ROUTES.BOOKING} className={styles.btn}>
+          <span>Book a Call</span>
+          <ArrowUp />
+        </Link>
+      ) : (
+        <div className={styles.mobile_menu}>
+          <Link href={APP_ROUTES.BOOKING} className={styles.btn}>
+            <span>Book a Call</span>
+            <ArrowUp />
+          </Link>
+          <button
+            className={styles.menu}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            <Menu />
+          </button>
+        </div>
+      )}
     </nav>
   );
 }

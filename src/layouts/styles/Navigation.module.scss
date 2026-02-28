@@ -9,6 +9,26 @@
   padding: 1rem;
   z-index: 100;
 
+  .mobile_menu {
+    display: none;
+
+    @media screen and (max-width: 500px) {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: none;
+        border: none;
+      }
+    }
+  }
+
   img {
     width: 11rem;
     height: 3rem;
@@ -21,6 +41,28 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
+
+    @media screen and (max-width: 500px) {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: #153635;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+      li {
+        width: 100%;
+      }
+
+      &.open {
+        display: flex;
+      }
+    }
 
     li {
       list-style: none;
