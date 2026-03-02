@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import styles from "./Page.module.css";
 import ArrowDown from "@/icons/ArrowDown";
 import Input from "@/components/Input";
@@ -6,6 +7,15 @@ import CheckBox from "@/components/CheckBox";
 import Menu from "@/icons/Menu";
 import Services from "./Services";
 import Form from "./Form";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "Build generational wealth with 909 Equity Capital through multifamily real estate opportunities and investor education.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (
