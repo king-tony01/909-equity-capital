@@ -7,6 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Facebook from "@/icons/Facebook";
 import styles from "./Page.module.css";
+import Instagram from "@/icons/Instagram";
+import LinkedIn from "@/icons/LinkedIn";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -151,28 +153,21 @@ export default function RootLayout({
                   </Link>
                 </small>
                 <small>
-                  <Link href="tel:+2349092686858">+234 9092686858</Link>
+                  <Link href="tel:+1 (346) 397-6667">+1 (346) 397-6667</Link>
                 </small>
               </div>
               <div>
                 <h4>Location</h4>
-                <address>
-                  21 Aso Rock street, Block 29 Atlanta, Abuja, Republic of Congo
-                </address>
+                <address>13231 Eldridge Meadow Dr Houston TX 77041</address>
               </div>
             </div>
             <div className={styles.footer_top_right}>
               <div className={styles.quick_links}>
-                <Link href="/">Quick Link</Link>
-                <Link href="/">Quick Link</Link>
-                <Link href="/">Quick Link</Link>
-                <Link href="/">Quick Link</Link>
-                <Link href="/">Quick Link</Link>
-                <Link href="/">Quick Link</Link>
-                <Link href="/">Quick Link</Link>
-                <Link href="/">Quick Link</Link>
-                <Link href="/">Quick Link</Link>
-                <Link href="/">Quick Link</Link>
+                <Link href="/">Sellers</Link>
+                <Link href="/">Partners</Link>
+                <Link href="/">Learn</Link>
+                <Link href="/">About 909 Equity</Link>
+                <Link href="/">Get Started</Link>
               </div>
               <div className={styles.contact}>
                 <h4>Stay Connected</h4>
@@ -181,16 +176,10 @@ export default function RootLayout({
                     <Facebook />
                   </Link>
                   <Link href="/">
-                    <Facebook />
+                    <Instagram />
                   </Link>
                   <Link href="/">
-                    <Facebook />
-                  </Link>
-                  <Link href="/">
-                    <Facebook />
-                  </Link>
-                  <Link href="/">
-                    <Facebook />
+                    <LinkedIn />
                   </Link>
                 </div>
               </div>

@@ -9,16 +9,18 @@ function Form() {
   const [formData, setFormData] = React.useState({
     fullName: "",
     email: "",
-    phoneNumber: "",
-    country: "",
+    // phoneNumber: "",
+    // country: "",
   });
 
-  const disabled =
-    !acceptedTerms ||
-    !formData.fullName ||
-    !formData.email ||
-    !formData.phoneNumber ||
-    !formData.country;
+  const disabled = !acceptedTerms || !formData.fullName || !formData.email;
+
+  // const disabled =
+  //   !acceptedTerms ||
+  //   !formData.fullName ||
+  //   !formData.email ||
+  //   !formData.phoneNumber ||
+  //   !formData.country;
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
@@ -29,11 +31,12 @@ function Form() {
     <form action="">
       <div className={styles.wrapper}>
         <div className={styles.top}>
-          <h2>Begin Your Investment Journey</h2>
+          <h2>One Decision. One Home. A Legacy That Lasts Generations.</h2>
           <p>
-            Schedule a consultation to explore multifamily investment
-            opportunities structured for stability, income, and generational
-            growth.
+            The families celebrating 50 years from now started somewhere, with
+            one property, one deal, and one commitment to think long term.
+            Whether you're selling, partnering, or just getting started, we'd be
+            honored to be part of your story.
           </p>
         </div>
         <div className={styles.inputs}>
@@ -53,7 +56,7 @@ function Form() {
             value={formData.email}
             onChange={handleInputChange}
           />
-          <Input
+          {/* <Input
             label="Phone Number"
             placeholder="Enter your Phone number"
             type="phone"
@@ -74,7 +77,7 @@ function Form() {
             name="country"
             value={formData.country}
             onChange={handleInputChange}
-          />
+          /> */}
         </div>
         <CheckBox
           label="I agree to the Policies and Terms"
@@ -82,7 +85,7 @@ function Form() {
           onChange={(e) => setAcceptedTerms(e.target.checked)}
         />
         <button type="submit" disabled={disabled}>
-          Book a consultation
+          Join our Community
         </button>
       </div>
     </form>

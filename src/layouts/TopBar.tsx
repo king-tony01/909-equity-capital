@@ -19,19 +19,19 @@ function TopBar() {
       path: APP_ROUTES.HOME,
     },
     {
-      label: "About",
+      label: "SELLER",
       path: APP_ROUTES.ABOUT,
     },
     {
-      label: "Services",
+      label: "EDUCATION",
       path: APP_ROUTES.SERVICES,
     },
     {
-      label: "Portfolio",
+      label: "PARTNER",
       path: APP_ROUTES.PORTFOLIO,
     },
     {
-      label: "Contact",
+      label: "CONTACT",
       path: APP_ROUTES.CONTACT,
     },
   ];

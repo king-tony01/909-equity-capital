@@ -9,7 +9,7 @@
     justify-content: center;
     background:
       linear-gradient(0.54deg, #153635 13.72%, rgba(61, 156, 153, 0) 99.54%),
-      url(/hero_bg.jpg);
+      url(/hero-image.png);
     background-position: center;
     background-size: cover;
 
@@ -32,6 +32,11 @@
           gap: 3rem;
           color: #c9d5c7;
           animation: moveLeft 10s linear infinite;
+
+          span {
+            display: block;
+            white-space: nowrap;
+          }
 
           @media screen and (max-width: 500px) {
             font-size: 7rem;
@@ -77,7 +82,7 @@
         }
 
         .short {
-          max-width: 15rem;
+          max-width: 60rem;
           text-align: center;
         }
       }
@@ -260,6 +265,11 @@
           color: #153635;
           animation: moveLeft 10s linear infinite;
 
+          span {
+            display: block;
+            white-space: nowrap;
+          }
+
           @media screen and (max-width: 500px) {
             font-size: 7rem;
           }
@@ -322,12 +332,14 @@
           gap: 3rem;
           width: 100%;
 
-          .top {
-            max-width: 400px;
+          h2 {
+            color: #153635;
+            font-weight: 400;
+            font-size: 3rem;
           }
 
-          .bottom {
-            max-width: 800px;
+          .top {
+            max-width: 600px;
           }
 
           ul {
@@ -351,6 +363,65 @@
             color: #153635;
             font-size: 1.2rem;
             line-height: 1.6;
+          }
+        }
+      }
+      .who_section_3 {
+        width: 100%;
+        margin: 2rem auto;
+        padding: 4rem;
+        flex-direction: column;
+
+        // @media screen and (max-width: 500px) {
+        //   padding: 1rem;
+        //   gap: 2rem;
+        //   grid-template-columns: 1fr;
+        // }
+
+        .title {
+          display: flex;
+          gap: 1rem;
+          // align-items: center;
+
+          .icon {
+            display: block;
+            transform: rotate(90deg);
+          }
+
+          h3 {
+            color: #153635;
+            text-transform: uppercase;
+            font-weight: 400;
+          }
+        }
+
+        .grid_content {
+          display: flex;
+          // flex-direction: column;
+          gap: 2rem;
+          width: 100%;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: #cfedda;
+            border-radius: 1rem;
+            min-height: 15rem;
+
+            h4 {
+              color: #153635;
+              font-weight: 700;
+              font-size: 1.5rem;
+            }
+
+            p {
+              color: #3c5657;
+              font-size: 1.1rem;
+              line-height: 1.6;
+            }
           }
         }
       }
@@ -381,7 +452,7 @@
       h4 {
         font-weight: 400;
         font-size: 1.2rem;
-        color: #71bb90;
+        color: #00de96;
       }
 
       .wrapper {
@@ -663,9 +734,10 @@
 
 .footer {
   width: 100%;
-  background:
-    linear-gradient(180deg, #153635de 0%, #153635de 100%),
-    url(/log_big.png) top center/cover no-repeat;
+  background: linear-gradient(180deg, #153635de 0%, #153635de 100%);
+  // background:
+  //   linear-gradient(180deg, #153635de 0%, #153635de 100%),
+  //   url(/log_big.png) top center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

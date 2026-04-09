@@ -7,7 +7,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  background: linear-gradient(0.54deg, #153635 13.72%, rgba(61, 156, 153, 0) 99.54%), url(/hero_bg.jpg);
+  background: linear-gradient(0.54deg, #153635 13.72%, rgba(61, 156, 153, 0) 99.54%), url(/hero-image.png);
   background-position: center;
   background-size: cover;
 }
@@ -30,6 +30,10 @@
   gap: 3rem;
   color: #c9d5c7;
   animation: moveLeft 10s linear infinite;
+}
+.home .hero .inner .title h1 span {
+  display: block;
+  white-space: nowrap;
 }
 @media screen and (max-width: 500px) {
   .home .hero .inner .title h1 {
@@ -66,7 +70,7 @@
   font-size: 1.2rem;
 }
 .home .hero .inner .down .short {
-  max-width: 15rem;
+  max-width: 60rem;
   text-align: center;
 }
 .home .who_section {
@@ -236,6 +240,10 @@
   color: #153635;
   animation: moveLeft 10s linear infinite;
 }
+.home .what_section .inner .title h1 span {
+  display: block;
+  white-space: nowrap;
+}
 @media screen and (max-width: 500px) {
   .home .what_section .inner .title h1 {
     font-size: 7rem;
@@ -288,11 +296,13 @@
   gap: 3rem;
   width: 100%;
 }
-.home .what_section .inner .who_section_2 .content .top {
-  max-width: 400px;
+.home .what_section .inner .who_section_2 .content h2 {
+  color: #153635;
+  font-weight: 400;
+  font-size: 3rem;
 }
-.home .what_section .inner .who_section_2 .content .bottom {
-  max-width: 800px;
+.home .what_section .inner .who_section_2 .content .top {
+  max-width: 600px;
 }
 .home .what_section .inner .who_section_2 .content ul {
   position: relative;
@@ -311,6 +321,50 @@
 .home .what_section .inner .who_section_2 .content p {
   color: #153635;
   font-size: 1.2rem;
+  line-height: 1.6;
+}
+.home .what_section .inner .who_section_3 {
+  width: 100%;
+  margin: 2rem auto;
+  padding: 4rem;
+  flex-direction: column;
+}
+.home .what_section .inner .who_section_3 .title {
+  display: flex;
+  gap: 1rem;
+}
+.home .what_section .inner .who_section_3 .title .icon {
+  display: block;
+  transform: rotate(90deg);
+}
+.home .what_section .inner .who_section_3 .title h3 {
+  color: #153635;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.home .what_section .inner .who_section_3 .grid_content {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+.home .what_section .inner .who_section_3 .grid_content div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #cfedda;
+  border-radius: 1rem;
+  min-height: 15rem;
+}
+.home .what_section .inner .who_section_3 .grid_content div h4 {
+  color: #153635;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.home .what_section .inner .who_section_3 .grid_content div p {
+  color: #3c5657;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 .home .opportunities {
@@ -338,7 +392,7 @@
 .home .opportunities .section h4 {
   font-weight: 400;
   font-size: 1.2rem;
-  color: #71bb90;
+  color: #00de96;
 }
 .home .opportunities .section .wrapper {
   position: relative;
@@ -585,7 +639,7 @@
 
 .footer {
   width: 100%;
-  background: linear-gradient(180deg, rgba(21, 54, 53, 0.8705882353) 0%, rgba(21, 54, 53, 0.8705882353) 100%), url(/log_big.png) top center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(21, 54, 53, 0.8705882353) 0%, rgba(21, 54, 53, 0.8705882353) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
