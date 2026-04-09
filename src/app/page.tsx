@@ -43,7 +43,7 @@ export default function Home() {
               better exit for sellers. A smarter path to generational wealth for
               our community.
             </p>
-            <p>Scroll to explore</p>
+            <p className={styles.scroll}>Scroll to explore</p>
           </div>
         </div>
       </section>
